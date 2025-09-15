@@ -1,5 +1,8 @@
 import React from 'react';
 import { GithubIcon, Mail, Phone } from 'lucide-react';
+// @ts-ignore
+import photo from '../components/photopassport.jpg'
+
 const Hero = () => {
   return <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
       {/* Background graphics */}
@@ -14,7 +17,7 @@ const Hero = () => {
             <div className="relative">
               <div className="w-64 h-64 rounded-full border-4 border-white shadow-xl overflow-hidden bg-gradient-to-br from-blue-50 to-white">
                 {/* Replace with your actual image URL */}
-                <img src="../photopassport.jpg" alt="Dondou Abiyi" className="w-full h-full object-cover" />
+                <img src={photo} alt="Dondou Abiyi" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg">
                 <span className="font-bold">UI/UX</span>
