@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { MenuIcon, XIcon } from 'lucide-react';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -7,25 +8,25 @@ const Header = () => {
   };
   const menuItems = [{
     name: 'Home',
-    href: '#home'
+    path: '/home'
   }, {
     name: 'About',
-    href: '#about'
+    path: '/about'
   }, {
     name: 'Skills',
-    href: '#skills'
+    path: '/skills'
   }, {
     name: 'Experience',
-    href: '#experience'
+    path: '/experience'
   }, {
     name: 'Projects',
-    href: '#projects'
+    path: '/projects'
   }, {
     name: 'Education',
-    href: '#education'
+    path: '/education'
   }, {
     name: 'Contact',
-    href: '#contact'
+    path: '/contact'
   }];
   return <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,11 +39,22 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
             <ul className="flex space-x-8">
-              {menuItems.map(item => <li key={item.name}>
-                  <a href={item.href} className="text-gray-600 hover:text-blue-600 transition-colors duration-300">
-                    {item.name}
-                  </a>
-                </li>)}
+              {menuItems.map(item => (
+                <li key={item.name}>
+                  <NavLink 
+                    to={item.path}
+                    className={({isActive}) => 
+                        `transition-colors duration-300 ${
+                        isActive 
+                          ? 'text-blue-600 font-bold border-b-2 border-blue-600' // Styles for the ACTIVE link
+                          : 'text-gray-600 hover:text-blue-600'                // Styles for INACTIVE links
+                      }`
+                    }
+                    >
+                      {item.name}
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </nav>
           {/* Mobile Menu Button */}

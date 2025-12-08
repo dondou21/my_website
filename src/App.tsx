@@ -1,25 +1,31 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Education from './components/Education';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { BrowserRouter,
+         Routes,
+         Route
+ } from 'react-router-dom';
+import Layout from './components/Layout';
+import Homepage from './pages/homepage';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Education from './pages/Education';
+import Experience from './pages/Experience';
+import Skills from './pages/Skills';
+import Projects from './pages/Projects';
+
 export function App() {
-  return <div className="bg-gray-50 min-h-screen">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Education />
-        <Contact />
-      </main>
-      <Footer />
-    </div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path='/home' element={<Homepage />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/education' element={<Education />} />
+          <Route path='/experience' element={<Experience />} />
+          <Route path='/skills' element={<Skills />} />
+          <Route path='/projects' element={<Projects />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }

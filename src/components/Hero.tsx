@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { GithubIcon, Mail, Phone } from 'lucide-react';
 // @ts-ignore
 import photo from '../components/photopassport.jpg'
@@ -38,12 +38,12 @@ const Hero = () => {
               engineering and a passion for user-centered design.
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
-              <a href="#contact" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors duration-300">
+              <Link to="/Contact" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors duration-300">
                 Get in Touch
-              </a>
-              <a href="#projects" className="bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 px-6 py-3 rounded-md transition-colors duration-300">
+              </Link>
+              <Link to="/Projects" className="bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 px-6 py-3 rounded-md transition-colors duration-300">
                 View Projects
-              </a>
+              </Link>
             </div>
             <div className="flex flex-wrap justify-center md:justify-start gap-6 text-gray-600">
               <a href="mailto:dondouabiyi@gmail.com" className="flex items-center gap-2 hover:text-blue-600 transition-colors duration-300">
