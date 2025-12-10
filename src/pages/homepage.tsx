@@ -3,7 +3,7 @@ const Homepage = () => {
     return (
         <>
             <div className="flex items-center justify-center mt-[70px] w-full h-[600px] md:h-[800px] bg-center bg-cover bg-fixed"
-                 style={ {backgroundImage: "url('/images/self1.jpg')" } }
+                 style={ {backgroundImage: "url('/images/self1.png')" } }
             >
                 <div className=" grid justify-center bg-blue-800/55 w-full  ">
                     <h1 className="text-sm  mt-6 font-bold text-white bg-blue-800 p-4 ">
